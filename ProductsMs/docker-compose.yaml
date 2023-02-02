@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  coffestoreDB:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes: 
+      - coffestoreDB:/var/lib/postgresql/data
+
+  productsapi: 
+    image: productsapi
+    build: 
+      context: ./ProductsApi
+    ports:
+      - "8080:80"
+    depends_on:
+      - coffestoreDB
+
+volumes:
+  coffestoreDB:
+    driver: local

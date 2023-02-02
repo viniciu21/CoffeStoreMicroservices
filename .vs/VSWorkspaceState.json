@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ProductsMs",
+    "\\ProductsMs\\ProductsApi",
+    "\\ProductsMs\\ProductsApi\\Core",
+    "\\ProductsMs\\ProductsApi\\Core\\Common",
+    "\\ProductsMs\\ProductsApi\\Core\\Common\\Data"
+  ],
+  "SelectedNode": "\\ProductsMs\\ProductsApi\\Dockerfile",
+  "PreviewInSolutionExplorer": false
+}
