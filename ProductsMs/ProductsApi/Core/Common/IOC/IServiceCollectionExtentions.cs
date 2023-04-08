@@ -11,7 +11,7 @@ namespace ProductsApi.Core.Common.IOC
             services.AddMvc();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
-            services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql("Host=localhost;Database=coffestore;Username=postgres;Password=mysecretpassword"));
+            services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql("Host=localhost;Database=coffestore;Username=postgres;Password=postgres"));
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             return services;
