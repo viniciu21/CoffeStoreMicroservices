@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productsapi-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productsapi
+  template:
+    metadata:
+      labels:
+        app: productsapi
+    spec:
+      containers:
+      - name: productsapi
+        image: viniods/productsapi:latest
+        imagePullPolicy: "Always"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: productsapi-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: productsapi
+  ports:
+  - name: productsapi
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: productgrpc
+    protocol: TCP
+    port: 666
+    targetPort: 666
