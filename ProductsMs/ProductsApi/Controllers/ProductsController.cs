@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductsApi.Core.Common.Data;
 using ProductsApi.Core.Models;
+using ProductsApi.Core.Models.Entities;
 using System.Net;
 
 namespace WebApplication1.Controllers
@@ -11,9 +12,9 @@ namespace WebApplication1.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ILogger<ProductsController> _logger;
-        private readonly AppDbContext _appDbContext;
+        private readonly ProductsDbContext _appDbContext;
 
-        public ProductsController(ILogger<ProductsController> logger, AppDbContext appDbContext)
+        public ProductsController(ILogger<ProductsController> logger, ProductsDbContext appDbContext)
         {
             _logger = logger;
             _appDbContext = appDbContext;
@@ -22,17 +23,17 @@ namespace WebApplication1.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<IActionResult> Get()
         {
-            var result = await _appDbContext.Products.ToListAsync();
-            return Ok(result);
+            //var result = await _appDbContext.Products.ToListAsync();
+            return Ok(new List<int>());
         }
 
         [HttpPost(Name = "SaveProduct")]
         public async Task<IActionResult> Save()
         {
-            ProductModel newProduct = new()
+            ProductEntity newProduct = new()
             {
-                ProductDescription = "teste1",
-                ProductName = "Jeans"
+                ProductDescription = "teste2",
+                ProductName = "Jeans2"
             };
 
             _appDbContext.Products.Add(newProduct);

@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ProductsMs",
-    "\\ProductsMs\\ProductsApi",
-    "\\ProductsMs\\ProductsApi\\Core",
-    "\\ProductsMs\\ProductsApi\\Core\\Common",
-    "\\ProductsMs\\ProductsApi\\Core\\Common\\Data"
+    "\\ProductsMs\\ProductsApi"
   ],
-  "SelectedNode": "\\ProductsMs\\ProductsApi\\Dockerfile",
+  "SelectedNode": "\\ProductsMs\\docker-compose.yaml",
   "PreviewInSolutionExplorer": false
 }

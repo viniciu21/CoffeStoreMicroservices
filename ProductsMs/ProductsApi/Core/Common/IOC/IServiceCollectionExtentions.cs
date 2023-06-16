@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ProductsApi.Core.Common.Data;
+using ProductsApi.Core.Models.Types;
 
 namespace ProductsApi.Core.Common.IOC
 {
@@ -11,9 +13,12 @@ namespace ProductsApi.Core.Common.IOC
             services.AddMvc();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
-            services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql("Host=localhost;Database=coffestore;Username=postgres;Password=postgres"));
+            services.AddDbContext<ProductsDbContext>(opt => opt.UseNpgsql());
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+
+            services.Configure<ConnectionStringsType>(configuration.GetSection(ConnectionStringsType.KEY));
+
             return services;
         }
 
