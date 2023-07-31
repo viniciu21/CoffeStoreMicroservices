@@ -20,11 +20,11 @@ namespace WebApplication1.Controllers
             _appDbContext = appDbContext;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetProducts")]
         public async Task<IActionResult> Get()
         {
-            //var result = await _appDbContext.Products.ToListAsync();
-            return Ok(new List<int>());
+            var result = await _appDbContext.Products.ToListAsync();
+            return Ok(result);
         }
 
         [HttpPost(Name = "SaveProduct")]

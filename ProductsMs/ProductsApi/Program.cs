@@ -4,6 +4,7 @@ namespace ProductsApi
 {
     public class Program
     {
+        // TODO: VALIDAR PROD vs DEV 
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);

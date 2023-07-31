@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using ProductsApi.Core.Common.Data;
 using ProductsApi.Core.Models.Types;
+using ProductsApi.MetricsLogs;
 
 namespace ProductsApi.Core.Common.IOC
 {
@@ -16,6 +17,8 @@ namespace ProductsApi.Core.Common.IOC
             services.AddDbContext<ProductsDbContext>(opt => opt.UseNpgsql());
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+
+            services.AddSingleton<MetricCollector>();
 
             services.Configure<ConnectionStringsType>(configuration.GetSection(ConnectionStringsType.KEY));
 

@@ -18,7 +18,9 @@ services:
     build: 
       context: ./ProductsApi
     ports:
-      - "8080:80"
+      - "3001:80"
+    # networks:
+    #   - prom_monitor-net
     depends_on:
       - coffestoreDB
 
