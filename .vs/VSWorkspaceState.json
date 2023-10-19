@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ProductsMs",
-    "\\ProductsMs\\ProductsApi"
+    ""
   ],
-  "SelectedNode": "\\ProductsMs\\docker-compose.yaml",
+  "SelectedNode": "\\ProductsMs.sln",
   "PreviewInSolutionExplorer": false
 }
